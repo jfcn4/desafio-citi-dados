@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Dados gerados pelo pipeline (reprodutíveis: rode python pipeline.py)
+dados/prata/
+dados/ouro/
+saida/
+repomix-output.xml
