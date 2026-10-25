@@ -15,9 +15,11 @@ def executar():
 
     prata = pd.read_csv(PRATA, parse_dates=["Data"])
     log = pd.read_csv(LOG, dtype=str, keep_default_na=False)
-    with pd.ExcelWriter(PLANILHA_SHEETS, engine="openpyxl", mode="a", datetime_format="DD/MM/YYYY") as w:
+    with pd.ExcelWriter(PLANILHA_SHEETS, engine="openpyxl", mode="a") as w:
         prata.to_excel(w, sheet_name="Prata", index=False)
         log.to_excel(w, sheet_name="Log", index=False)
+        for (celula,) in w.sheets["Prata"].iter_rows(min_row=2, min_col=2, max_col=2):
+            celula.number_format = "DD/MM/YYYY"  # mostra só a data, sem o 00:00:00
     print(f"\n[Exportar] Planilha para o Google Sheets: {PLANILHA_SHEETS.relative_to(PLANILHA_SHEETS.parents[1])}")
 
 
