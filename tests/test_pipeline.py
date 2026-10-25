@@ -11,6 +11,8 @@ def test_converter_valor():
     assert converter_valor(3260) == 3260.0
     assert converter_valor("R$ 1.200,00") == 1200.0
     assert converter_valor("R$ 630,00") == 630.0
+    with pytest.raises(ValueError):
+        converter_valor("3260.0")  # formato americano: sem a regex, viraria 32600 em silêncio
 
 
 def test_converter_data():
