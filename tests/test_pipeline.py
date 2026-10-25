@@ -1,4 +1,4 @@
-"""Testes do pipeline. Rodar da raiz do projeto com: pytest -v"""
+#Testes do pipeline. Rodar da raiz do projeto com: pytest -v
 
 import pandas as pd
 import pytest

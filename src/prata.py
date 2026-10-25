@@ -16,7 +16,10 @@ def converter_valor(v):
     #3260 -> 3260.0 e 'R$ 1.200,00' -> 1200.0
     #tira o ponto de milhar antes de trocar a virgula
     if isinstance(v, str):
-        v = v.replace("R$", "").strip().replace(".", "").replace(",", ".")
+        v = v.replace("R$", "").strip()
+        if not re.fullmatch(r"\d{1,3}(\.\d{3})*(,\d{1,2})?", v):
+            raise ValueError(f"Valor fora do formato brasileiro: {v!r}")
+        v = v.replace(".", "").replace(",", ".")
     return float(v)
 
 
