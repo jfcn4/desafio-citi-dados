@@ -3,6 +3,8 @@
 Pipeline em Python na arquitetura medalhão (Bronze -> Prata -> Ouro) para a planilha de
 pedidos da Metalúrgica Mezzalira, e o assistente de manutenção feito no Gemini Gems.
 
+**Resposta:** Recife, em março de 2026 (R$ 29.730,00) · [Planilha](https://docs.google.com/spreadsheets/d/192QDCdMgVCKMQpIE-rJ3ihYeE07HmJ8L/edit?gid=524573454#gid=524573454) · [Testes do assistente](https://drive.google.com/drive/folders/1ZTCzGj6jovFXG8UEZp9Qgdxu3XlX0E_o?usp=sharing)
+
 ## Como rodar
 
 ```bash
@@ -45,3 +47,10 @@ Cada camada pode ser refeita sem rodar as outras.
 | Cidades por tabela de-para | “REC” -> “Recife” não sairia de nenhuma regra de capitalização. |
 | Conversões estritas | Valor ou data em formato inesperado dá erro em vez de passar em silêncio |
 | Ouro em Python além da tabela dinâmica | Duas ferramentas independentes precisam chegar ao mesmo total |
+
+## Etapa 2: assistente de manutenção
+
+Gem no Gemini que responde só com base no manual. As 8 perguntas de teste foram rodadas
+2 vezes, cada uma em conversa nova: 16 de 16 respostas corretas.
+Instruções em [`instrucoes_gem.md`](etapa2_assistente/instrucoes_gem.md) e resultados em
+[`testes_gem.md`](etapa2_assistente/testes_gem.md).
